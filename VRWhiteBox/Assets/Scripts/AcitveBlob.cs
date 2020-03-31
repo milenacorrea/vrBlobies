@@ -5,6 +5,7 @@ using UnityEngine;
 public class AcitveBlob : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioClip blobsound;
     
 
     // Start is called before the first frame update
@@ -21,16 +22,31 @@ public class AcitveBlob : MonoBehaviour
             GameMasterData.Instance.Blob1Active = true;
             Debug.Log("Blob1Active");
         }
-        else
+
+        if (Input.GetKeyDown("3"))
         {
             GameMasterData.Instance.Blob1Active = false;
-            //this.GetComponent<Light>().enabled = false;
-        }
+            Debug.Log("Blob1inactive");
+        }        
 
         if(GameMasterData.Instance.Blob1Active == true)
         {
-            audioSource.Play();
+            
+            Debug.Log("play audio");
             this.GetComponent<Light>().enabled = true;
+            audioSource.PlayOneShot(blobsound, .1f);
+            
+
         }
+
+        if(GameMasterData.Instance.Blob1Active == false)
+        {
+            this.GetComponent<Light>().enabled = false;
+            //
+            Debug.Log("Stop audio");
+            audioSource.Stop();
+        }
+
+
     }
 }

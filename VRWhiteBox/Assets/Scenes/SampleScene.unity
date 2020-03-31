@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 339267131}
+  blobsound: {fileID: 8300000, guid: 993c0dae811192647ab2491d874e2852, type: 3}
 --- !u!108 &339267133
 Light:
   m_ObjectHideFlags: 0
